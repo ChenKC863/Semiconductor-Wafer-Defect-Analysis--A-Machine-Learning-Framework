@@ -108,7 +108,7 @@ pred_class = np.argmax(output)
 ```
 ---
 ## License
-This project is licensed under the MIT License – see the LICENSE file for details.
+This project is licensed under the MIT License – see the [LICENSE file](https://github.com/ChenKC863/Semiconductor-Wafer-Defect-Analysis--A-Machine-Learning-Framework/blob/main/LICENSE) for details.
 
 ## Acknowledgments
 Dataset by Dr. Tawfik Rahman
