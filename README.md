@@ -62,14 +62,14 @@ cd Semiconductor-Wafer-Defect-Analysis-A-Machine-Learning-Framework
 pip install -r requirements.txt
 
 
-Inference Example
+## Inference Example
 python
 from src.predict import predict
 pred_class, confidence = predict("path/to/image.jpg")
 print(f"Predicted: {pred_class}, Confidence: {confidence:.4f}")
 
 
-ONNX Inference
+## ONNX Inference
 python
 import onnxruntime as ort
 import numpy as np
@@ -80,7 +80,7 @@ output = sess.run(None, {"input": input_tensor})[0]
 pred_class = np.argmax(output)
 
 
-Repository Structure
+## Repository Structure
 text
 ├── model/                      # Trained models (Keras, ONNX, label encoder)
 ├── src/                        # Source code
@@ -95,6 +95,6 @@ text
 License
 This project is licensed under the MIT License – see the LICENSE file for details.
 
-Acknowledgments
+### Acknowledgments
 Dataset by Dr. Tawfik Rahman
 EfficientNetV2 implementation from TensorFlow Keras Applications
