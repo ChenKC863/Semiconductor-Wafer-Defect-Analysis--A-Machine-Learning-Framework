@@ -93,6 +93,10 @@ text
 ├── README.md
 └── LICENSE
 
-<img width="671" height="197" alt="image" src="https://github.com/user-attachments/assets/59478530-1fc6-4f06-9c28-09a4c05ff1cd" />
+## License
+This project is licensed under the MIT License – see the LICENSE file for details.
+
+## Acknowledgments
+Dataset by Dr. Tawfik Rahman
 
 
