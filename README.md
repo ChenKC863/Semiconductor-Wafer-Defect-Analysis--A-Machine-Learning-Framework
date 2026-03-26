@@ -78,3 +78,23 @@ sess = ort.InferenceSession("model/efficientnetv2-m.onnx")
 input_tensor = preprocess_image("image.jpg", target_size=480)
 output = sess.run(None, {"input": input_tensor})[0]
 pred_class = np.argmax(output)
+
+
+Repository Structure
+text
+├── model/                      # Trained models (Keras, ONNX, label encoder)
+├── src/                        # Source code
+│   ├── preprocess.py           # Image preprocessing (coordinate channels)
+│   ├── predict.py              # Inference script
+│   ├── train.py                # Training script (EfficientNetV2)
+│   └── anomaly.py              # PCA + Isolation Forest pipeline
+├── anomaly_reports/            # Generated plots (anomaly rates, variances)
+├── requirements.txt            # Python dependencies
+├── README.md
+└── LICENSE
+License
+This project is licensed under the MIT License – see the LICENSE file for details.
+
+Acknowledgments
+Dataset by Dr. Tawfik Rahman
+EfficientNetV2 implementation from TensorFlow Keras Applications
