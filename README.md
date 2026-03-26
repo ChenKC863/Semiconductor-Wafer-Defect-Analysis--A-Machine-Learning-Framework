@@ -69,22 +69,21 @@ Detailed per‑class anomaly rates and variance plots are available in the `anom
 - See `requirements.txt` for full list.
 
 ### Installation
-
-```bash
+```
 git clone https://github.com/your-username/Semiconductor-Wafer-Defect-Analysis-A-Machine-Learning-Framework.git
 cd Semiconductor-Wafer-Defect-Analysis-A-Machine-Learning-Framework
 pip install -r requirements.txt
-
+```
 ---
 ## Inference Example
-python
+```
 from src.predict import predict
 pred_class, confidence = predict("path/to/image.jpg")
 print(f"Predicted: {pred_class}, Confidence: {confidence:.4f}")
-
+```
 ---
 ## ONNX Inference
-python
+```
 import onnxruntime as ort
 import numpy as np
 from src.preprocess import preprocess_image
@@ -92,9 +91,10 @@ sess = ort.InferenceSession("model/efficientnetv2-m.onnx")
 input_tensor = preprocess_image("image.jpg", target_size=480)
 output = sess.run(None, {"input": input_tensor})[0]
 pred_class = np.argmax(output)
+```
 ---
 ## Repository Structure
-text
+```
 ├── model/                      # Trained models (Keras, ONNX, label encoder)
 ├── src/                        # Source code
 │   ├── preprocess.py           # Image preprocessing (coordinate channels)
