@@ -1,5 +1,4 @@
 # Semiconductor-Wafer-Defect-Analysis--A-Machine-Learning-Framework
-# Semiconductor Wafer Defect Analysis – A Machine Learning Framework
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
