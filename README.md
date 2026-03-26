@@ -92,11 +92,7 @@ text
 ├── requirements.txt            # Python dependencies
 ├── README.md
 └── LICENSE
-License
-This project is licensed under the MIT License – see the LICENSE file for details.
 
-### **Acknowledgments**
+<img width="671" height="197" alt="image" src="https://github.com/user-attachments/assets/59478530-1fc6-4f06-9c28-09a4c05ff1cd" />
 
-Dataset by Dr. Tawfik Rahman
-EfficientNetV2 implementation from TensorFlow Keras Applications
 
