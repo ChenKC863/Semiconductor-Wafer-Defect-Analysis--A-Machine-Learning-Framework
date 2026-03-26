@@ -41,8 +41,8 @@ End-to-end machine learning pipeline for **9‑class wafer defect classification
 
 | Variant | Test Accuracy | Max Difference (ONNX vs Keras) | Anomaly Rate (Train) |
 |---------|---------------|-------------------------------|----------------------|
-| S       | 99.0%         | 3.6e‑7                        | 0.54% – 3.87%        |
-| M       | 99.0%         | 1.13e‑6                       | 0.90% – 1.79%        |
+| S       | 98.42%         | 3.6e‑7                        | 0.54% – 3.87%        |
+| M       | 98.42%         | 1.13e‑6                       | 0.90% – 1.79%        |
 
 Detailed per‑class anomaly rates and variance plots are available in the `anomaly_reports/` folder.
 
