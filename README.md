@@ -75,15 +75,15 @@ git clone https://github.com/your-username/Semiconductor-Wafer-Defect-Analysis-A
 cd Semiconductor-Wafer-Defect-Analysis-A-Machine-Learning-Framework
 pip install -r requirements.txt
 
-
-## **Inference Example**
+---
+## Inference Example
 python
 from src.predict import predict
 pred_class, confidence = predict("path/to/image.jpg")
 print(f"Predicted: {pred_class}, Confidence: {confidence:.4f}")
 
-
-## **ONNX Inference**
+---
+## ONNX Inference
 python
 import onnxruntime as ort
 import numpy as np
@@ -92,9 +92,8 @@ sess = ort.InferenceSession("model/efficientnetv2-m.onnx")
 input_tensor = preprocess_image("image.jpg", target_size=480)
 output = sess.run(None, {"input": input_tensor})[0]
 pred_class = np.argmax(output)
-
-
-## **Repository Structure**
+---
+## Repository Structure
 text
 ├── model/                      # Trained models (Keras, ONNX, label encoder)
 ├── src/                        # Source code
@@ -106,10 +105,10 @@ text
 ├── requirements.txt            # Python dependencies
 ├── README.md
 └── LICENSE
-
+---
 ## License
 This project is licensed under the MIT License – see the LICENSE file for details.
-
+---
 ## Acknowledgments
 Dataset by Dr. Tawfik Rahman
 
