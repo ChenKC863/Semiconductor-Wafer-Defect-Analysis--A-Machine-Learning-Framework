@@ -13,16 +13,16 @@ docker run --rm -v /path/to/image.jpg:/data/test.jpg yourdockerhubusername/wafer
 Output: predicted class and confidence.
 ```
 
-# Local Inference (without Docker)
+## Local Inference (without Docker)
 ```bash
 pip install -r requirements.txt
 python infer.py /path/to/image.jpg
 ```
 
-# Model Variants
+## Model Variants
 •	S (384×384)
 •	M (480×480)
 To use M variant, set environment variable MODEL_VARIANT=M before running, or build with --build-arg MODEL_VARIANT=M.
 
-# Training
+## Training
 Trained on Kaggle. See the-defect-analysis-of-wafer.ipynb (not included in this repo) for training code.
