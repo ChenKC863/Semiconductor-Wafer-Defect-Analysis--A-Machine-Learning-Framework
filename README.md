@@ -21,7 +21,7 @@ python infer.py /path/to/image.jpg
 
 ## Model Variants
 •	S (384×384)  
-•	M (480×480)
+•	M (480×480)  
 To use M variant, set environment variable MODEL_VARIANT=M before running, or build with --build-arg MODEL_VARIANT=M.
 
 ## Training
