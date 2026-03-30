@@ -7,6 +7,7 @@ Pre‑trained EfficientNetV2 model for 9‑class wafer defect classification, co
 ## Dataset
 
 - **Source**: [Multi‑class Semiconductor Wafer Image Dataset](https://www.kaggle.com/datasets/drtawfikrrahman/multi-class-semiconductor-wafer-image-dataset)
+Note: The dataset is used under the Kaggle Dataset Terms of Service for non‑commercial purposes.
 
 ## Model Variants
 •	S (384×384)  
@@ -33,6 +34,3 @@ Pull the image and run:
 docker run --rm -v /path/to/image.jpg:/data/test.jpg yourdockerhubusername/wafer-model:latest /data/test.jpg
 Output: predicted class and confidence.
 ```
-
-This project uses the [Multi‑class Semiconductor Wafer Image Dataset](https://www.kaggle.com/datasets/drtawfikrrahman/multi-class-semiconductor-wafer-image-dataset)  
-from Kaggle, licensed under [CC BY‑NC‑SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
