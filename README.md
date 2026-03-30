@@ -6,7 +6,7 @@ Pre‑trained EfficientNetV2 model for 9‑class wafer defect classification, co
 
 ## Dataset
 
-- **Source**: [Multi‑class Semiconductor Wafer Image Dataset](https://www.kaggle.com/datasets/drtawfikrrahman/multi-class-semiconductor-wafer-image-dataset)
+- **Source**: [Multi‑class Semiconductor Wafer Image Dataset](https://www.kaggle.com/datasets/drtawfikrrahman/multi-class-semiconductor-wafer-image-dataset)  
 Note: The dataset is used under the Kaggle Dataset Terms of Service for non‑commercial purposes.
 
 ## Model Variants
