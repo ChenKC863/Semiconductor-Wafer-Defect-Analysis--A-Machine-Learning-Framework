@@ -1,58 +1,43 @@
-# Python virtual environment
-.venv/
-venv/
+# Python
 __pycache__/
 *.pyc
+.venv/
+venv/
 
-# IDE settings
-.vscode/
-.idea/
-
-# Dataset folders (large, not tracked)
+# Data (not needed)
 train/
 valid/
 test/
-EfficientNetV2
 
-#source code python files
-src/anomaly.py
-src/predict.py
-src/train.py
+# IDE
+.vscode/
+.idea/
 
-# Model files (optional, can be kept if using Git LFS)
-# model/**/*.keras   # uncomment if you exclude Keras models
-# model/**/*.onnx    # uncomment if you exclude ONNX models
-
-# Temporary and Office files
-~$*.docx
-~$*.pptx
+# Temporary files
 *.tmp
-~WRL*.tmp
+~$*
 
-# Generated documentation and presentations
+# Other files 
 *.pptx
 *.pdf
+*.txt
 *.docx
-
-
-# Jupyter notebook outputs (if you want to ignore them)
-__notebook_source__.ipynb
-
-# Images (unless necessary for README)
 *.png
 *.jpg
 *.jpeg
+model/M/*.keras
+model/M/*model.onnx
+model/S/*.keras
+model/S/*model.onnx
 
-# Other text files (notes, drafts)
-*.txt
-*.docx
+EfficientNetV2/*
+src/anomaly.py
+src/predict.py
+src/train.py
+LICENSE
+Readme.md
+__notebook_source__.ipynb
 
-# Backup files
-*.bak
-*.swp
-*.swo
-
-# Model files are already included (we do want them), but if they are large you might consider Git LFS
-# If models are too big for Git, consider using Git LFS or store them separately
-# We'll keep them in the repo for simplicity, but note that GitHub has file size limits.
-# For large models (e.g., >100 MB) you may need Git LFS.
+# 遠端新增忽略規則
+*.log
+.env
