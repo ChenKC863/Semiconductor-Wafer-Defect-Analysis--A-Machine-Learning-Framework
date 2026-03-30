@@ -4,20 +4,10 @@
 
 Pre‑trained EfficientNetV2 model for 9‑class wafer defect classification, converted to ONNX and ready for inference.
 
-## Quick Start (with Docker)
+## Dataset
 
-Pull the image and run:
-
-```bash
-docker run --rm -v /path/to/image.jpg:/data/test.jpg yourdockerhubusername/wafer-model:latest /data/test.jpg
-Output: predicted class and confidence.
-```
-
-## Local Inference (without Docker)
-```bash
-pip install -r requirements.txt
-python infer.py /path/to/image.jpg
-```
+- **Source**: [Multi‑class Semiconductor Wafer Image Dataset](https://www.kaggle.com/datasets/drtawfikrrahman/multi-class-semiconductor-wafer-image-dataset)  
+Note: The dataset is used under the Kaggle Dataset Terms of Service for non‑commercial purposes.
 
 ## Model Variants
 •	S (384×384)  
@@ -26,3 +16,21 @@ To use S/M variant, set environment variable MODEL_VARIANT=S(or M) before runnin
 
 ## Training
 Trained on Kaggle. See the-defect-analysis-of-wafer.ipynb (not included in this repo) for training code.
+
+## Local Inference (without Docker)
+```bash
+pip install -r requirements.txt
+python infer.py /path/to/image.jpg
+```
+• `preprocess.py` is a module imported by `infer.py`, providing image preprocessing and coordinate channel generation functions.
+
+• During inference, `infer.py` calls functions such as `preprocess_image_pil`. If `preprocess.py` is missing, inference will fail.
+
+## Quick Start (with Docker)
+
+Pull the image and run:
+
+```bash
+docker run --rm -v /path/to/image.jpg:/data/test.jpg yourdockerhubusername/wafer-model:latest /data/test.jpg
+Output: predicted class and confidence.
+```
