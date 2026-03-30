@@ -18,6 +18,9 @@ Output: predicted class and confidence.
 pip install -r requirements.txt
 python infer.py /path/to/image.jpg
 ```
+• `preprocess.py` is a module imported by `infer.py`, providing image preprocessing and coordinate channel generation functions.
+
+• During inference, `infer.py` calls functions such as `preprocess_image_pil`. If `preprocess.py` is missing, inference will fail.
 
 ## Model Variants
 •	S (384×384)  
