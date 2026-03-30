@@ -26,9 +26,9 @@ test/
 *.jpg
 *.jpeg
 model/M/*.keras
-model/M/*model.onnx
+#model/M/*model.onnx
 model/S/*.keras
-model/S/*model.onnx
+#model/S/*model.onnx
 
 EfficientNetV2/*
 src/anomaly.py
