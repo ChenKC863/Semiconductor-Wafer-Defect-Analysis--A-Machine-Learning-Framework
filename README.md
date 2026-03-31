@@ -1,6 +1,7 @@
 # Wafer Defect Classification with ONNX
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docker Pulls](https://img.shields.io/docker/pulls/steven710382/wafer-model)](https://hub.docker.com/r/steven710382/wafer-model)
 
 Pre‑trained EfficientNetV2 model for 9‑class wafer defect classification, converted to ONNX and ready for inference.
 
@@ -39,6 +40,6 @@ Pull and run the S variant (if for the M variant, replace :S with :M):
 ```bash
 docker pull steven710382/wafer-model:S
 docker run --rm -v /path/to/your/image.jpg:/data/test.jpg steven710382/wafer-model:S /data/test.jpg
-# Please replace `/path/to/your/image.jpg` with the absolute path to the actual image
+> **Note**: Replace `/path/to/your/image.jpg` with the absolute path to your image file.
 ```
 The output will show the predicted class and confidence.    
