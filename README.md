@@ -17,7 +17,7 @@ To use S/M variant, set environment variable MODEL_VARIANT=S(or M) before runnin
 ## Training
 Trained on Kaggle. See the-defect-analysis-of-wafer.ipynb (not included in this repo) for training code.
 
-## Local Inference (without Docker)
+## Local Inference
 ```bash
 pip install -r requirements.txt
 python infer.py /path/to/image.jpg
