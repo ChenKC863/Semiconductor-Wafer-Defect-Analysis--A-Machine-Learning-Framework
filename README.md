@@ -35,7 +35,7 @@ python infer.py /path/to/image.jpg
 
 The pre‑built images are available on [Docker Hub](https://hub.docker.com/r/steven710382/wafer-model/tags).
 
-Pull and run the S variant(if for the M variant, replace :S with :M.):
+Pull and run the S variant(if for the M variant, replace :S with :M):
 
 ```bash
 docker pull steven710382/wafer-model:S
