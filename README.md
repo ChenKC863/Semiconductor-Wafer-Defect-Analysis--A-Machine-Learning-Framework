@@ -39,7 +39,7 @@ Pull and run the S variant:
 
 ```bash
 docker pull steven710382/wafer-model:S
-docker run --rm -v /path/to/your/image.jpg:/data/test.jpg steven710382/wafer-model:S /data/test.jpg
-ˋˋˋ
+docker run --rm -v /path/to/your/image.jpg:/data/test.jpg steven710382/wafer-model:S /data/test.jpg  
+ˋˋˋ    
 
 • For the M variant, replace :S with :M.
