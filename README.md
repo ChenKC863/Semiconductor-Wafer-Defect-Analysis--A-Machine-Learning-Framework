@@ -38,6 +38,6 @@ Pull and run the S variant(if for the M variant, replace :S with :M):
 
 ```bash
 docker pull steven710382/wafer-model:S
-docker run --rm -v /path/to/your/image.jpg:/data/test.jpg steven710382/wafer-model:S /data/test.jpg  
+docker run --rm -v /path/to/your/image.jpg:/data/test.jpg steven710382/wafer-model:S /data/test.jpg  # Please replace `/path/to/your/image.jpg` with the absolute path to the actual image.
 ```
 The output will show the predicted class and confidence.    
