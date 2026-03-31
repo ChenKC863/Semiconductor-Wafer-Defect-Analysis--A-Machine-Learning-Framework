@@ -34,11 +34,11 @@ python infer.py /path/to/image.jpg
 
 The pre‑built images are available on [Docker Hub](https://hub.docker.com/r/steven710382/wafer-model/tags).
 
-Pull and run the S variant(if for the M variant, replace :S with :M):
+Pull and run the S variant (if for the M variant, replace :S with :M):
 
 ```bash
-docker pull your_dockerhub_username/wafer-model:S
+docker pull your_docker_hub_username/wafer-model:S
 docker run --rm -v /path/to/your/image.jpg:/data/test.jpg your_docker_hub_username/wafer-model:S /data/test.jpg
-# Please replace your_dockerhub_username by your dockerhub user name and `/path/to/your/image.jpg` with the absolute path to the actual image
+# Please replace your_docker_hub_username by your dockerhub user name and `/path/to/your/image.jpg` with the absolute path to the actual image
 ```
 The output will show the predicted class and confidence.    
