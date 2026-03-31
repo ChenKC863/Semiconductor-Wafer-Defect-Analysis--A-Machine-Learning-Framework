@@ -15,7 +15,7 @@ Pre‑trained EfficientNetV2 model for 9‑class wafer defect classification, co
 - **S** – input size 384×384  
 - **M** – input size 480×480  
 
-To use a specific variant, set the environment variable `MODEL_VARIANT=S` or `MODEL_VARIANT=M` before running, or build with `--build-arg MODEL_VARIANT=S`.
+To use a specific variant, set the environment variable `MODEL_VARIANT=S` or `MODEL_VARIANT=M` before running, or build with `--build-arg MODEL_VARIANT=S` or `--build-arg MODEL_VARIANT=M`.
 
 ## Training
 
