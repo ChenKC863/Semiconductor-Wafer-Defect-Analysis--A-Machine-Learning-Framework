@@ -1,23 +1,28 @@
 # Wafer Defect Classification with ONNX
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docker Pulls](https://img.shields.io/docker/pulls/steven710382/wafer-model)](https://hub.docker.com/r/steven710382/wafer-model)
 
 Pre‑trained EfficientNetV2 model for 9‑class wafer defect classification, converted to ONNX and ready for inference.
 
 ## Dataset
 
 - **Source**: [Multi‑class Semiconductor Wafer Image Dataset](https://www.kaggle.com/datasets/drtawfikrrahman/multi-class-semiconductor-wafer-image-dataset)  
-Note: The dataset is used under the Kaggle Dataset Terms of Service for non‑commercial purposes.
+  *Note: The dataset is used under the Kaggle Dataset Terms of Service for non‑commercial purposes.*
 
 ## Model Variants
-•	S (384×384)  
-•	M (480×480)  
-To use S/M variant, set environment variable MODEL_VARIANT=S(or M) before running, or build with --build-arg MODEL_VARIANT=S(or M).
+
+- **S** – input size 384×384  
+- **M** – input size 480×480  
+
+To use a specific variant, set the environment variable `MODEL_VARIANT=S` or `MODEL_VARIANT=M` before running, or build with `--build-arg MODEL_VARIANT=S`.
 
 ## Training
-Trained on Kaggle. See the-defect-analysis-of-wafer.ipynb (not included in this repo) for training code.
 
-## Local Inference
+The model was trained on Kaggle using dual Tesla T4 GPUs. The training notebook (`the-defect-analysis-of-wafer.ipynb`) is included in this repository for reference.
+
+## Local Inference (without Docker)
+
 ```bash
 pip install -r requirements.txt
 python infer.py /path/to/image.jpg
@@ -36,4 +41,5 @@ Pull and run the S variant:
 docker pull steven710382/wafer-model:S
 docker run --rm -v /path/to/your/image.jpg:/data/test.jpg steven710382/wafer-model:S /data/test.jpg
 ˋˋˋ
+
 • For the M variant, replace :S with :M.
