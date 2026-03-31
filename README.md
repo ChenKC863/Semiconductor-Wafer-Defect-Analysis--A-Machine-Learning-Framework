@@ -32,5 +32,5 @@ Pull the image and run:
 
 ```bash
 docker run --rm -v /path/to/image.jpg:/data/test.jpg yourdockerhubusername/wafer-model:latest /data/test.jpg
-Output: predicted class and confidence.
 ```
+Output: predicted class and confidence.
