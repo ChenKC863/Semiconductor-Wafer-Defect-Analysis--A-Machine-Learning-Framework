@@ -37,8 +37,9 @@ The pre‑built images are available on [Docker Hub](https://hub.docker.com/r/st
 Pull and run the S variant (if for the M variant, replace :S with :M):
 
 ```bash
-docker pull your_docker_hub_username/wafer-model:S
-docker run --rm -v /path/to/your/image.jpg:/data/test.jpg your_docker_hub_username/wafer-model:S /data/test.jpg
-# Please replace your_docker_hub_username by your dockerhub user name and `/path/to/your/image.jpg` with the absolute path to the actual image
+docker pull docker_hub_username/wafer-model:S
+docker run --rm -v /path/to/your/image.jpg:/data/test.jpg docker_hub_username/wafer-model:S /data/test.jpg
+# Please replace docker_hub_username by your dockerhub user name and `/path/to/your/image.jpg` with the absolute path to the actual image
+(e.g my docker_hub_username is steven710382)
 ```
 The output will show the predicted class and confidence.    
