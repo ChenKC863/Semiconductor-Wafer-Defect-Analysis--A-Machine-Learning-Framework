@@ -38,6 +38,6 @@ LICENSE
 Readme.md
 __notebook_source__.ipynb
 
-# 遠端新增忽略規則
+# Add ignore rules on the remote end
 *.log
 .env
