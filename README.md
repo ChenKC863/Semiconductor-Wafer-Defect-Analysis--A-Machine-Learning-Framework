@@ -28,9 +28,6 @@ python infer.py /path/to/image.jpg
 
 ## Quick Start (with Docker)
 
-Pull the image and run:
+The pre‑built images are available on [Docker Hub](https://hub.docker.com/r/steven710382/wafer-model/tags).
 
-```bash
-docker run --rm -v /path/to/image.jpg:/data/test.jpg yourdockerhubusername/wafer-model:latest /data/test.jpg
-```
-Output: predicted class and confidence.
+
