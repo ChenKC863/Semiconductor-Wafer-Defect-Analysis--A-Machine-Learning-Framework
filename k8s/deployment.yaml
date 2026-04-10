@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wafer-defect-api
+  labels:
+    app: wafer-defect
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wafer-defect
+  template:
+    metadata:
+      labels:
+        app: wafer-defect
+    spec:
+      containers:
+      - name: api
+        image: steven710382/wafer-defect:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: MODEL_VARIANT
+          value: "M"
+        - name: ONNX_MODEL_PATH
+          value: "/app/model/$(MODEL_VARIANT)/best_model.onnx"
+        - name: LABEL_ENCODER_PATH
+          value: "/app/model/$(MODEL_VARIANT)/label_encoder.pkl"
+        - name: VARIANT_PATH
+          value: "/app/model/$(MODEL_VARIANT)/variant.txt"
+        - name: OLLAMA_URL
+          value: "http://ollama-service:11434/api/generate"
+        - name: OLLAMA_MODEL
+          value: "llama3"
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5

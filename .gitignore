@@ -25,6 +25,7 @@ test/
 *.png
 *.jpg
 *.jpeg
+*.csv
 model/M/*.keras
 #model/M/*model.onnx
 model/S/*.keras

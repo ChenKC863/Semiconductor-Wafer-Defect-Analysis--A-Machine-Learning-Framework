@@ -26,14 +26,14 @@ def generate_coord_tensor(size: int):
     coord = np.stack([xx, yy, r], axis=-1).astype(np.float32)
     return tf.constant(coord)
 
-def preprocess_image_tf(image_path: str, target_size: int, coord_tensor: tf.Tensor):
+def preprocess_image_tf(image_path: str, target_size: int, coord_tensor):
     """
     Preprocess image using TensorFlow operations (suitable for tf.data pipeline).
 
     Args:
         image_path (str): Path to the image.
         target_size (int): Desired height/width after resizing.
-        coord_tensor (tf.Tensor): Precomputed coordinate tensor.
+        coord_tensor: Precomputed coordinate tensor.
 
     Returns:
         tf.Tensor: Preprocessed image tensor of shape (1, target_size, target_size, 6).

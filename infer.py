@@ -71,9 +71,9 @@ def main():
         sys.exit(1)
 
     # Default paths – can be overridden with environment variables (useful for Docker)
-    onnx_path = os.environ.get("ONNX_MODEL_PATH", "./model/M/best_model.onnx")
-    encoder_path = os.environ.get("LABEL_ENCODER_PATH", "./model/M/label_encoder.pkl")
-    variant_path = os.environ.get("VARIANT_PATH", "./model/M/variant.txt")
+    onnx_path = os.environ.get("ONNX_MODEL_PATH", "./model/S/best_model.onnx")
+    encoder_path = os.environ.get("LABEL_ENCODER_PATH", "./model/S/label_encoder.pkl")
+    variant_path = os.environ.get("VARIANT_PATH", "./model/S/variant.txt")
 
     # Load model and encoder
     sess, label_encoder, target_size = load_onnx_model_and_encoder(
