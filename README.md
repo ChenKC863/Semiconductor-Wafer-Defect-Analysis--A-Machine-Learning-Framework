@@ -69,7 +69,7 @@ SEMICONDUCTOR_WAFER/  # Project root directory
 ├── .gitignore
 ├── .gitattributes                  # (Optional) for Git LFS
 └── README.md
-
+```
 
 ## Model Variants
 
