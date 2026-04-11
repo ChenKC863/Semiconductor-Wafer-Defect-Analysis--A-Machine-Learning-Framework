@@ -26,10 +26,6 @@ All models and results are version‑controlled using **Git LFS**.
 
 ## 📁 Project Structure
 
-The complete directory structure is as follows (also available in [Semiconductor-Wafer-Defect-Analysis-A-Machine-Learning-Framework.txt](https://github.com/ChenKC863/Semiconductor-Wafer-Defect-Analysis--A-Machine-Learning-Framework/blob/main/Semiconductor-Wafer-Defect-Analysis-A-Machine-Learning-Framework.txt))
-
-## 📁 Project Structure
-
 The complete directory structure is as follows (also available in [Semiconductor-Wafer-Defect-Analysis-A-Machine-Learning-Framework.txt](https://github.com/ChenKC863/Semiconductor-Wafer-Defect-Analysis--A-Machine-Learning-Framework/blob/main/Semiconductor-Wafer-Defect-Analysis-A-Machine-Learning-Framework.txt)):
 
 ```text
