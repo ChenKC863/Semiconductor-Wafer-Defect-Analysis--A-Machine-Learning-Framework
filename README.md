@@ -66,6 +66,29 @@ SEMICONDUCTOR_WAFER/  # Project root directory
 ├── .gitattributes                  # (Optional) for Git LFS
 └── README.md
 ```
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/ChenKC863/Semiconductor-Wafer-Defect-Analysis--A-Machine-Learning-Framework.git
+```
+
+### 2. Set up Python environment
+```bash
+python -m venv venv
+source venv/bin/activate      # Linux/macOS
+venv\Scripts\activate          # Windows
+pip install -r requirements.txt
+```
+
+### 3. Run inference using the ONNX model
+```bash
+python infer.py /path/to/wafer_image.jpg # please change the directory of image 
+```bash
+
 
 ## Model Variants
 
