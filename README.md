@@ -98,6 +98,7 @@ To use a specific variant, set the environment variable `MODEL_VARIANT=S` or `MO
 Note
 
 • `preprocess.py` is a module imported by `infer.py`, providing image preprocessing and coordinate channel generation functions.
+
 • During inference, `infer.py` calls functions such as `preprocess_image_pil`. If `preprocess.py` is missing, inference will fail.
 
 ## Training
