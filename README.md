@@ -118,15 +118,23 @@ The pre‑built images are available on [Docker Hub](https://hub.docker.com/r/st
 
 Pull and run the S variant (if for the M variant, replace :S with :M):
 
+### Run with pre-built Docker image (recommended)
 ```bash
-docker build --build-arg MODEL_VARIANT=S -t wafer-model:S .
-docker run --rm -v /path/to/image.jpg:/data/test.jpg wafer-model:S /data/test.jpg
 docker pull steven710382/wafer-model:S
 docker run --rm -v /path/to/your/image.jpg:/data/test.jpg steven710382/wafer-model:S /data/test.jpg
 ```
+
+### Build an image from source code
+```bash
+docker build --build-arg MODEL_VARIANT=S -t wafer-model:S .
+docker run --rm -v /path/to/image.jpg:/data/test.jpg wafer-model:S /data/test.jpg
+```
+
 **Note**: Replace `/path/to/your/image.jpg` with the absolute path to your image file.
 
 The output will show the predicted class and confidence.
+
+
 
 ### 6.Deploy to Kubernetes (requires a cluster)
 ```bash
