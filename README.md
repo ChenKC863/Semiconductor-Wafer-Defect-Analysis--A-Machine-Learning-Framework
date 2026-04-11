@@ -160,15 +160,4 @@ Open http://localhost:8501 and start querying (e.g., “Donut 類別中，異常
 
 The model was trained on Kaggle using dual Tesla T4 GPUs. The training notebook (`the-defect-analysis-of-wafer.ipynb`) is included in this repository for reference.
 
-## Quick Start (with Docker)
-
-The pre‑built images are available on [Docker Hub](https://hub.docker.com/r/steven710382/wafer-model/tags).
-
-Pull and run the S variant (if for the M variant, replace :S with :M):
-
-```bash
-docker pull steven710382/wafer-model:S
-docker run --rm -v /path/to/your/image.jpg:/data/test.jpg steven710382/wafer-model:S /data/test.jpg
-> **Note**: Replace `/path/to/your/image.jpg` with the absolute path to your image file.
-```
-The output will show the predicted class and confidence.    
+ 
