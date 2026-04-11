@@ -136,7 +136,7 @@ The output will show the predicted class and confidence.
 
 
 
-### 6.Deploy to Kubernetes (requires a cluster)
+### 6. Deploy to Kubernetes (requires a cluster)
 ```bash
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
