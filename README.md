@@ -156,18 +156,26 @@ Confidence: 0.9622
 ```
 Natural language query 
 (Chinese)
+
 User question:
+
 Donut 類別中，異常分數最高的前 5 筆資料是哪幾張圖片？
+
 Generated SQL:
+
 SELECT image_path FROM wafers WHERE LOWER(pred_label) = LOWER('Donut') ORDER BY anomaly_score DESC LIMIT 5;
 
 
 
 
 (English)
+
 User question:
+
 In the Donut category, which 5 images have the highest outlier scores?
+
 Generated SQL:
+
 SELECT image_path FROM wafers WHERE LOWER(pred_label) = LOWER('Donut') ORDER BY anomaly_score DESC LIMIT 5;
 
 
