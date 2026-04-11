@@ -10,6 +10,20 @@ Pre‑trained EfficientNetV2 model for 9‑class wafer defect classification, co
 - **Source**: [Multi‑class Semiconductor Wafer Image Dataset](https://www.kaggle.com/datasets/drtawfikrrahman/multi-class-semiconductor-wafer-image-dataset)  
   *Note: The dataset is used under the Kaggle Dataset Terms of Service for non‑commercial purposes.*
 
+## 📌 Overview
+
+This project provides an **end‑to‑end machine learning framework** for semiconductor wafer defect analysis. It includes:
+
+- **Deep learning classification** using EfficientNetV2 (S and M variants) with coordinate channel augmentation and two‑phase training.
+- **ONNX model conversion** for efficient inference.
+- **Per‑class anomaly detection** using PCA + Isolation Forest, storing results in SQLite.
+- **REST API** (FastAPI) for real‑time wafer image classification, with optional LLM commentary via Ollama.
+- **Java client** demonstrating cross‑language REST API consumption.
+- **Kubernetes deployment** manifests (Deployment + Service).
+- **Natural language query interface** (Streamlit + Ollama) that allows users to query the defect database using plain English/Chinese.
+
+All models and results are version‑controlled using **Git LFS**.
+
 ## Model Variants
 
 - **S** – input size 384×384  
