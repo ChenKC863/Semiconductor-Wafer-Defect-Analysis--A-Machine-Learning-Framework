@@ -8,7 +8,7 @@ class LLMClient:
     def __init__(self, provider="ollama", model=None, api_key=None):
         self.provider = provider
         if provider == "ollama":
-            self.model = model or "qwen2.5:7b"
+            self.model = model or "llama3.2:3b"
             self.url = "http://localhost:11434/api/chat"
         elif provider == "openai":
             self.model = model or "gpt-4o-mini"
