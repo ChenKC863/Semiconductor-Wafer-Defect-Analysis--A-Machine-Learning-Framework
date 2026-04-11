@@ -182,6 +182,9 @@ Generated SQL:
 
 SELECT image_path FROM wafers WHERE LOWER(pred_label) = LOWER('Donut') ORDER BY anomaly_score DESC LIMIT 5;
 
+<img width="1702" height="1125" alt="image" src="https://github.com/user-attachments/assets/95531b1d-5afb-42e4-bd02-77297abd246c" />
+
+<img width="1702" height="1125" alt="image" src="https://github.com/user-attachments/assets/a7ecf4e7-5bec-4884-8b77-b04e48fc7c3b" />
 
 
 
