@@ -157,7 +157,7 @@ Confidence: 0.9622
 Natural language query 
 (Chinese)
 
-User question:
+User prompt:
 
 Donut 類別中，異常分數最高的前 5 筆資料是哪幾張圖片？
 
@@ -170,7 +170,7 @@ SELECT image_path FROM wafers WHERE LOWER(pred_label) = LOWER('Donut') ORDER BY 
 
 (English)
 
-User question:
+User prompt:
 
 In the Donut category, which 5 images have the highest outlier scores?
 
