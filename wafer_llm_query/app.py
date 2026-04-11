@@ -70,14 +70,14 @@ SUMMARY_TEMPLATE = {
     "中文": """
 使用者問題：{question}
 資料庫查詢 SQL：{sql}
-查詢結果（前 20 筆）：
+查詢結果：
 {data}
 請用繁體中文總結這些資料，回答使用者的問題。如果結果很多，可以說明總筆數並舉例。
 """,
     "English": """
 User question: {question}
 SQL query: {sql}
-Query result (first 20 rows):
+Query result:
 {data}
 Please summarize the data in English to answer the user's question. If there are many results, mention the total count and give examples.
 """
