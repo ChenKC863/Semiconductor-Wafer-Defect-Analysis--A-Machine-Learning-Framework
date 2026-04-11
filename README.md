@@ -127,7 +127,7 @@ docker run --rm -v /path/to/your/image.jpg:/data/test.jpg steven710382/wafer-mod
 ### Build an image from source code
 ```bash
 docker build --build-arg MODEL_VARIANT=S -t wafer-model:S .
-docker run --rm -v /path/to/image.jpg:/data/test.jpg wafer-model:S /data/test.jpg
+docker run --rm -v /path/to/your/image.jpg:/data/test.jpg wafer-model:S /data/test.jpg
 ```
 
 **Note**: Replace `/path/to/your/image.jpg` with the absolute path to your image file.
