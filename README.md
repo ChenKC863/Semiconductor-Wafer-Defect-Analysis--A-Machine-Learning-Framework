@@ -101,6 +101,32 @@ Note
 
 • During inference, `infer.py` calls functions such as `preprocess_image_pil`. If `preprocess.py` is missing, inference will fail.
 
+### 4. Start the REST API server
+```bash
+set ONNX_MODEL_PATH=model/S/best_model.onnx
+set LABEL_ENCODER_PATH=model/S/label_encoder.pkl
+set VARIANT_PATH=model/S/variant.txt
+uvicorn inference_api:app --host 0.0.0.0 --port 8000 --reload
+```
+Test with **curl** :
+```bash
+curl -X POST -F "file=@test.jpg" http://localhost:8000/predict
+```
+### 5. Quick Start (with Docker)
+
+The pre‑built images are available on [Docker Hub](https://hub.docker.com/r/steven710382/wafer-model/tags).
+
+Pull and run the S variant (if for the M variant, replace :S with :M):
+
+```bash
+docker build --build-arg MODEL_VARIANT=S -t wafer-model:S .
+docker run --rm -v /path/to/image.jpg:/data/test.jpg wafer-model:S /data/test.jpg
+docker pull steven710382/wafer-model:S
+docker run --rm -v /path/to/your/image.jpg:/data/test.jpg steven710382/wafer-model:S /data/test.jpg
+> **Note**: Replace `/path/to/your/image.jpg` with the absolute path to your image file.
+```
+The output will show the predicted class and confidence.
+
 ## Training
 
 The model was trained on Kaggle using dual Tesla T4 GPUs. The training notebook (`the-defect-analysis-of-wafer.ipynb`) is included in this repository for reference.
