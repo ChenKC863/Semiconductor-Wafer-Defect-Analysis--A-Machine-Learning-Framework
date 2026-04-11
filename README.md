@@ -150,10 +150,10 @@ Open http://localhost:8501 and start querying (e.g., “Donut 類別中，異常
 
 ## 🧪 Example Results
 Classification output (sample)
-ˋˋˋtext
+```text
 Predicted class: Center
 Confidence: 0.9622
-ˋˋˋ
+```
 
 
 ## Training
