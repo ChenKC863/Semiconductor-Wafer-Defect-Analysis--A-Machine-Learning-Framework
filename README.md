@@ -155,6 +155,7 @@ Predicted class: Center
 Confidence: 0.9622
 ```
 Natural language query 
+
 (Chinese)
 
 User prompt:
