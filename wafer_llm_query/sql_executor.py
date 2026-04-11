@@ -7,7 +7,20 @@ class SQLExecutor:
         self.db_path = db_path
 
     def execute(self, sql_query):
-        sql_upper = sql_query.strip().upper()
+        # 1. Remove comment lines (lines that start with --)
+        lines = sql_query.strip().split('\n')
+        clean_lines = []
+        for line in lines:
+            stripped = line.strip()
+            if stripped and not stripped.startswith('--'):
+                clean_lines.append(line)
+        sql_clean = ' '.join(clean_lines).strip()
+
+        # 2. Only take the first statement (before the semicolon).
+        if ';' in sql_clean:
+            sql_clean = sql_clean.split(';')[0].strip()
+
+        sql_upper = sql_clean.upper()
         if not sql_upper.startswith("SELECT"):
             return False, "僅允許 SELECT 查詢", None
 
@@ -18,7 +31,7 @@ class SQLExecutor:
 
         try:
             conn = sqlite3.connect(self.db_path)
-            df = pd.read_sql_query(sql_query, conn)
+            df = pd.read_sql_query(sql_clean, conn)
             conn.close()
             return True, f"成功取得 {len(df)} 筆資料", df
         except Exception as e:

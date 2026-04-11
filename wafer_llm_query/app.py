@@ -1,6 +1,7 @@
 import streamlit as st
 from llm_client import LLMClient
 from sql_executor import SQLExecutor
+import re
 
 st.set_page_config(page_title="晶圓缺陷自然語言查詢", layout="wide")
 st.title("🔍 晶圓缺陷資料庫 - 自然語言查詢")
@@ -35,34 +36,37 @@ SYSTEM_PROMPT = {
 欄位:
 - image_path (TEXT): 影像路徑
 - split (TEXT): 資料集分割 (train/valid/test)
-- true_label (TEXT): 真實缺陷類別 (注意：儲存的值為首字母大寫，例如 'Donut', 'Center', 'Edge-Loc' 等)
+- true_label (TEXT): 真實缺陷類別 (首字母大寫，例如 'Donut', 'Center', 'Edge-Loc')
 - pred_label (TEXT): 模型預測類別
 - pred_prob (REAL): 預測機率 (0~1)
 - anomaly_score (REAL): 異常分數，數值越高代表越不異常，數值越低代表越異常
 - is_anomaly (INTEGER): 是否為異常 (1=異常, 0=正常)
 
-請根據使用者的自然語言問題，生成標準 SQLite 語法的 SELECT 查詢。
-**重要規則：**
-1. 文字比較必須不區分大小寫。你**必須**使用 `LOWER(true_label) = LOWER('donut')` 而不是 `true_label = 'donut'`。
-2. 當使用者說「異常分數最高」或「分數最高」時，表示 anomaly_score 數值最大，請使用 `ORDER BY anomaly_score DESC`。
-3. 當使用者說「最異常」或「異常分數最低」時，請使用 `ORDER BY anomaly_score ASC`。
-4. 只回傳 SQL 語句，不要包含任何其他文字、解釋或標記。
+**嚴格遵守以下規則：**
+1. 文字比較必須不區分大小寫。使用 `LOWER(true_label) = LOWER('donut')`。
+2. 「異常分數最高」→ `ORDER BY anomaly_score DESC`；「最異常」→ `ORDER BY anomaly_score ASC`。
+3. 只回傳 SQL 語句，不要有任何其他文字、解釋、標記或引號。
+4. **當使用者要求列出具體圖片並涉及異常分數排序時，SELECT 必須同時包含 `image_path` 和 `anomaly_score`。**
+5. **絕對不要使用 `title_label` 這個欄位，正確欄位名是 `true_label`。**
+
+正確範例：
+使用者問：「Donut 類別中，異常分數最高的前 5 筆資料是哪幾張圖片？」
+你必須輸出：
+SELECT image_path, anomaly_score FROM wafers WHERE LOWER(true_label) = LOWER('Donut') ORDER BY anomaly_score DESC LIMIT 5;
 """,
     "English": """
-You are a SQL expert. The database schema is as follows:
-Table: wafers
-Columns:
-- image_path (TEXT): image file path
-- split (TEXT): dataset split (train/valid/test)
-- true_label (TEXT): true defect class
-- pred_label (TEXT): predicted defect class
-- pred_prob (REAL): prediction probability (0~1)
-- anomaly_score (REAL): anomaly score (lower means more anomalous)
-- is_anomaly (INTEGER): whether it is anomalous (1=yes, 0=no)
+You are a SQL expert. Schema: table wafers with columns: image_path, split, true_label, pred_label, pred_prob, anomaly_score, is_anomaly.
 
-Based on the user's natural language question, generate a standard SQLite SELECT query.
-Text comparisons should be case-insensitive. For example, `true_label='donut'` should use `LOWER(true_label) = LOWER('donut')` or `true_label COLLATE NOCASE = 'donut'`.
-Return only the SQL statement, no additional text or explanation.
+Strict rules:
+1. Case‑insensitive: use `LOWER(true_label) = LOWER(value)`.
+2. "highest anomaly score" → `ORDER BY anomaly_score DESC`; "most anomalous" → `ORDER BY anomaly_score ASC`.
+3. Return ONLY the SQL statement, no extra text, no quotes, no markdown.
+4. When user asks for images with anomaly score ordering, SELECT must include both `image_path` and `anomaly_score`.
+5. The correct column name is `true_label`, never `title_label`.
+
+Example – user: "Donut class, top 5 images with highest anomaly score"
+You must output:
+SELECT image_path, anomaly_score FROM wafers WHERE LOWER(true_label) = LOWER('Donut') ORDER BY anomaly_score DESC LIMIT 5;
 """
 }
 
@@ -103,7 +107,21 @@ if prompt := st.chat_input("請輸入您的問題 / Enter your question"):
         with st.spinner("思考中..."):
             system_msg = SYSTEM_PROMPT[language]
             messages = [{"role": "system", "content": system_msg}, {"role": "user", "content": prompt}]
-            sql = llm.chat(messages, temperature=0.0).strip()
+            sql_raw = llm.chat(messages, temperature=0.0).strip()
+            
+            # 清理 SQL：移除 markdown 代碼塊、多餘引號、前後空白
+            # 1. 移除 ```sql ... ``` 或 ``` ... ```
+            sql_clean = re.sub(r'```sql\s*|```\s*', '', sql_raw, flags=re.IGNORECASE)
+            # 2. 移除開頭和結尾的單引號或雙引號
+            sql_clean = re.sub(r'^[\'"]|[\'"]$', '', sql_clean.strip())
+            # 3. 如果還有引號包圍整個語句，再次清理
+            if sql_clean.startswith("'") and sql_clean.endswith("'"):
+                sql_clean = sql_clean[1:-1]
+            if sql_clean.startswith('"') and sql_clean.endswith('"'):
+                sql_clean = sql_clean[1:-1]
+            
+            sql = sql_clean.strip()
+            
             st.code(sql, language="sql")
 
             success, msg, df = executor.execute(sql)
