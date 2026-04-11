@@ -134,6 +134,19 @@ kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 ```
 
+### 7. Launch natural language query interface
+First install and start Ollama, then pull a model:
+
+```bash
+ollama serve
+ollama pull llama3.2:3b
+```
+Then run Streamlit:
+```bash
+streamlit run wafer_llm_query/app.py
+Open http://localhost:8501 and start querying (e.g., “Donut 類別中，異常分數最高的前 5 筆資料是哪幾張圖片？”).
+```
+
 ## Training
 
 The model was trained on Kaggle using dual Tesla T4 GPUs. The training notebook (`the-defect-analysis-of-wafer.ipynb`) is included in this repository for reference.
