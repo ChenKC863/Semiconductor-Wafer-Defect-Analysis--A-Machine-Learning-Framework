@@ -96,7 +96,9 @@ Model Variants
 To use a specific variant, set the environment variable `MODEL_VARIANT=S` or `MODEL_VARIANT=M` before running, or build with `--build-arg MODEL_VARIANT=S` or `--build-arg MODEL_VARIANT=M`.
 
 **Note**:
+
 • `preprocess.py` is a module imported by `infer.py`, providing image preprocessing and coordinate channel generation functions.
+
 • During inference, `infer.py` calls functions such as `preprocess_image_pil`. If `preprocess.py` is missing, inference will fail.
 
 ### 4. Start the REST API server
