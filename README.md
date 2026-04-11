@@ -135,14 +135,7 @@ docker run --rm -v /path/to/your/image.jpg:/data/test.jpg wafer-model:S /data/te
 The output will show the predicted class and confidence.
 
 
-
-### 6. Deploy to Kubernetes (requires a cluster)
-```bash
-kubectl apply -f k8s/deployment.yaml
-kubectl apply -f k8s/service.yaml
-```
-
-### 7. Launch natural language query interface
+### 6. Launch natural language query interface
 First install and start Ollama, then pull a model:
 
 ```bash
