@@ -84,32 +84,24 @@ venv\Scripts\activate          # Windows
 pip install -r requirements.txt
 ```
 
-### 3. Run inference using the ONNX model
+### 3. Run local inference using the ONNX model (without Docker)
 ```bash
 python infer.py /path/to/wafer_image.jpg # please change the directory of image 
 ```
-
-
-## Model Variants
+Model Variants
 
 - **S** – input size 384×384  
 - **M** – input size 480×480  
 
 To use a specific variant, set the environment variable `MODEL_VARIANT=S` or `MODEL_VARIANT=M` before running, or build with `--build-arg MODEL_VARIANT=S` or `--build-arg MODEL_VARIANT=M`.
 
+Note
+• `preprocess.py` is a module imported by `infer.py`, providing image preprocessing and coordinate channel generation functions.
+• During inference, `infer.py` calls functions such as `preprocess_image_pil`. If `preprocess.py` is missing, inference will fail.
+
 ## Training
 
 The model was trained on Kaggle using dual Tesla T4 GPUs. The training notebook (`the-defect-analysis-of-wafer.ipynb`) is included in this repository for reference.
-
-## Local Inference (without Docker)
-
-```bash
-pip install -r requirements.txt
-python infer.py /path/to/image.jpg
-```
-• `preprocess.py` is a module imported by `infer.py`, providing image preprocessing and coordinate channel generation functions.
-
-• During inference, `infer.py` calls functions such as `preprocess_image_pil`. If `preprocess.py` is missing, inference will fail.
 
 ## Quick Start (with Docker)
 
