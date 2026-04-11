@@ -128,6 +128,12 @@ docker run --rm -v /path/to/your/image.jpg:/data/test.jpg steven710382/wafer-mod
 
 The output will show the predicted class and confidence.
 
+### 6.Deploy to Kubernetes (requires a cluster)
+```bash
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+```
+
 ## Training
 
 The model was trained on Kaggle using dual Tesla T4 GPUs. The training notebook (`the-defect-analysis-of-wafer.ipynb`) is included in this repository for reference.
