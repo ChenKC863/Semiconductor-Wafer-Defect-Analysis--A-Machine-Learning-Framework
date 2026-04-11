@@ -87,7 +87,7 @@ pip install -r requirements.txt
 ### 3. Run inference using the ONNX model
 ```bash
 python infer.py /path/to/wafer_image.jpg # please change the directory of image 
-```bash
+```
 
 
 ## Model Variants
