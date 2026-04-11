@@ -24,6 +24,11 @@ This project provides an **end‑to‑end machine learning framework** for semic
 
 All models and results are version‑controlled using **Git LFS**.
 
+## 📁 Project Structure
+
+The complete directory structure is as follows (also available in [Semiconductor-Wafer-Defect-Analysis-A-Machine-Learning-Framework.txt](https://github.com/ChenKC863/Semiconductor-Wafer-Defect-Analysis--A-Machine-Learning-Framework/blob/main/Semiconductor-Wafer-Defect-Analysis-A-Machine-Learning-Framework.txt))
+
+
 ## Model Variants
 
 - **S** – input size 384×384  
