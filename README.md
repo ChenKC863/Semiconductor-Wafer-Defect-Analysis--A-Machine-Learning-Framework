@@ -148,6 +148,13 @@ streamlit run wafer_llm_query/app.py
 ```
 Open http://localhost:8501 and start querying (e.g., “Donut 類別中，異常分數最高的前 5 筆資料是哪幾張圖片？”).
 
+## 🧪 Example Results
+Classification output (sample)
+ˋˋˋtext
+Predicted class: Center
+Confidence: 0.9622
+ˋˋˋ
+
 
 ## Training
 
