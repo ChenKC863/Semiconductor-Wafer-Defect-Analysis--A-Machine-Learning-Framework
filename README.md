@@ -99,10 +99,13 @@ To use a specific variant, set the environment variable `MODEL_VARIANT=S` or `MO
 • During inference, `infer.py` calls functions such as `preprocess_image_pil`. If `preprocess.py` is missing, inference will fail.
 
 ### 4. Start the REST API server
+
 ```bash
+# Set environment variables
 set ONNX_MODEL_PATH=model/S/best_model.onnx
 set LABEL_ENCODER_PATH=model/S/label_encoder.pkl
 set VARIANT_PATH=model/S/variant.txt
+# Start the server
 uvicorn inference_api:app --host 0.0.0.0 --port 8000 --reload
 ```
 Test with **curl** :
@@ -110,6 +113,13 @@ Test with **curl** :
 curl -X POST -F "file=@test.jpg" http://localhost:8000/predict
 ```
 (if for the M variant, replace S with M)
+
+**Test with Java client**
+Compile and run the provided Java client
+```bash
+javac java_client/WaferDefectClient.java
+java WaferDefectClient test.jpg http://localhost:8000/predict
+```
 ### 5. Quick Start (with Docker)
 
 The pre‑built images are available on [Docker Hub](https://hub.docker.com/r/steven710382/wafer-model/tags).
