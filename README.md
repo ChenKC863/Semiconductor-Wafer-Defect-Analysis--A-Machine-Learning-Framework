@@ -55,9 +55,6 @@ SEMICONDUCTOR_WAFER/  # Project root directory
 ├── java_client/                    # Java example client for REST API
 │   ├── WaferDefectClient.class     # Compiled Java bytecode
 │   └── WaferDefectClient.java      # Java source code
-├── k8s/                            # Kubernetes deployment files
-│   ├── deployment.yaml             # Deployment definition (2 replicas, probes)
-│   └── service.yaml                # LoadBalancer service
 ├── inference_api.py                # FastAPI REST service (ONNX + Ollama)
 ├── Dockerfile                      # Docker image recipe (for inference_api.py)
 ├── infer.py                        # Original inference script (ONNX Runtime)
