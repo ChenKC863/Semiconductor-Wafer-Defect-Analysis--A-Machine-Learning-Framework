@@ -16,13 +16,11 @@ with st.sidebar:
         "選擇資料庫",
         ["wafer_features_classwise_S.db", "wafer_features_classwise_M.db"]
     )
-    provider = st.selectbox("LLM 後端", ["ollama", "openai"])
-    if provider == "ollama":
-        model = st.text_input("Ollama 模型名稱", value="llama3.2:3b")
-        api_key = None
-    else:
-        model = st.text_input("OpenAI 模型", value="gpt-4o-mini")
-        api_key = st.text_input("OpenAI API Key", type="password")
+    # Keep only Ollama; model selection uses a drop-down menu.
+    model = st.selectbox(
+        "Ollama 模型名稱",
+        ["llama3.2:3b", "qwen2.5-coder:7b"]
+    )
     language = st.selectbox("Language / 語言", ["中文", "English"])
 
     if st.button("清除對話歷史"):
@@ -88,7 +86,7 @@ Please summarize the data in English to answer the user's question. If there are
 }
 
 try:
-    llm = LLMClient(provider=provider, model=model, api_key=api_key)
+    llm = LLMClient(provider="ollama", model=model, api_key=None)
 except Exception as e:
     st.sidebar.error(f"LLM 初始化失敗：{e}")
     st.stop()
@@ -109,12 +107,9 @@ if prompt := st.chat_input("請輸入您的問題 / Enter your question"):
             messages = [{"role": "system", "content": system_msg}, {"role": "user", "content": prompt}]
             sql_raw = llm.chat(messages, temperature=0.0).strip()
             
-            # 清理 SQL：移除 markdown 代碼塊、多餘引號、前後空白
-            # 1. 移除 ```sql ... ``` 或 ``` ... ```
+            # Clean up SQL: Remove markdown code blocks, extra quotes, and leading and trailing whitespace.
             sql_clean = re.sub(r'```sql\s*|```\s*', '', sql_raw, flags=re.IGNORECASE)
-            # 2. 移除開頭和結尾的單引號或雙引號
             sql_clean = re.sub(r'^[\'"]|[\'"]$', '', sql_clean.strip())
-            # 3. 如果還有引號包圍整個語句，再次清理
             if sql_clean.startswith("'") and sql_clean.endswith("'"):
                 sql_clean = sql_clean[1:-1]
             if sql_clean.startswith('"') and sql_clean.endswith('"'):
@@ -140,7 +135,8 @@ if prompt := st.chat_input("請輸入您的問題 / Enter your question"):
 
                 st.success(f"✅ {msg}")
                 st.write("### 自然語言回答 / Natural Language Answer")
-                st.markdown(summary)
+                # 修改：使用 st.text 避免路徑被渲染為連結（導致顏色變化）
+                st.text(summary)
                 st.write("### 查詢結果表格 / Query Result")
                 st.dataframe(df)
 
