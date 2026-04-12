@@ -159,7 +159,7 @@ ollama pull llama3.2:3b
 ollama pull qwen2.5-coder:7b
 ```
 
-Then run Streamlit:
+Finally, run the Streamlit app:
 ```bash
 streamlit run wafer_llm_query/app.py
 ```
