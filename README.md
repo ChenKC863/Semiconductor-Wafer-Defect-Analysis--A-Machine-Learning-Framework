@@ -149,7 +149,7 @@ First install and start Ollama, then pull a model:
 
 ```bash
 ollama serve
-ollama pull llama3.2:3b
+ollama pull llama3.2:3b qwen2.5-coder:7b
 ```
 Then run Streamlit:
 ```bash
