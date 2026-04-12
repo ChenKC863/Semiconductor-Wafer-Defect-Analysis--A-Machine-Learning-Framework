@@ -105,6 +105,9 @@ To use a specific variant, set the environment variable `MODEL_VARIANT=S` or `MO
 set ONNX_MODEL_PATH=model/S/best_model.onnx
 set LABEL_ENCODER_PATH=model/S/label_encoder.pkl
 set VARIANT_PATH=model/S/variant.txt
+set OLLAMA_URL=http://localhost:11434/api/generate
+set OLLAMA_MODEL=llama3.2:3b # If the ollama model is qwen2.5-coder:7b, please replace llama3.2:3b by qwen2.5-coder:7b.
+
 # Start the server
 uvicorn inference_api:app --host 0.0.0.0 --port 8000 --reload
 ```
