@@ -166,13 +166,13 @@ Generated SQL:
 
 SELECT image_path FROM wafers WHERE LOWER(pred_label) = LOWER('Donut') ORDER BY anomaly_score DESC LIMIT 5;
 
-<img width="1112" height="561" alt="image" src="https://github.com/user-attachments/assets/f863f896-893b-44e2-ac57-d67cac6762d2" />
+<img width="1388" height="698" alt="image" src="https://github.com/user-attachments/assets/b152111e-7596-42f3-b7be-f60409990ecd" />
 
-<img width="1104" height="549" alt="image" src="https://github.com/user-attachments/assets/531f9fdb-080c-4b89-a53e-938fdff8297f" />
+<img width="1373" height="689" alt="image" src="https://github.com/user-attachments/assets/f5127b24-8f0e-42c2-8c0b-910961276424" />
 
-<img width="1094" height="538" alt="image" src="https://github.com/user-attachments/assets/b433ca8b-5ec0-484a-9545-6bd407a298fc" />
+<img width="1367" height="678" alt="image" src="https://github.com/user-attachments/assets/7c8aea38-fe21-438b-86df-ca9afead3e05" />
 
-<img width="1098" height="551" alt="image" src="https://github.com/user-attachments/assets/842b7eb9-ab82-4d83-a4bd-c00802ea5a3f" />
+<img width="1368" height="691" alt="image" src="https://github.com/user-attachments/assets/7b2494a8-2773-47bb-ad93-d74519a5dae8" />
 
 
 (English)
@@ -185,10 +185,13 @@ Generated SQL:
 
 SELECT image_path FROM wafers WHERE LOWER(pred_label) = LOWER('Donut') ORDER BY anomaly_score DESC LIMIT 5;
 
-<img width="1702" height="1125" alt="image" src="https://github.com/user-attachments/assets/95531b1d-5afb-42e4-bd02-77297abd246c" />
+<img width="1387" height="696" alt="image" src="https://github.com/user-attachments/assets/a9591620-b7be-445b-abc2-360de0f89a71" />
 
-<img width="1702" height="1125" alt="image" src="https://github.com/user-attachments/assets/a7ecf4e7-5bec-4884-8b77-b04e48fc7c3b" />
+<img width="1372" height="693" alt="image" src="https://github.com/user-attachments/assets/b6f379c0-141a-410f-b8ba-26a7c5a8f4da" />
 
+<img width="1368" height="670" alt="image" src="https://github.com/user-attachments/assets/1dab4b30-7dd9-4501-820e-c312eeee55a0" />
+
+<img width="1372" height="686" alt="image" src="https://github.com/user-attachments/assets/23f4943f-15d7-4edb-bc5f-d5070d0cab5a" />
 
 
 ## Training
