@@ -98,7 +98,7 @@ To use a specific variant, set the environment variable `MODEL_VARIANT=S` or `MO
 
 • During inference, `infer.py` calls functions such as `preprocess_image_pil`. If `preprocess.py` is missing, inference will fail.
 
-### 4. Start the REST API server and Java Client
+### 4. Start the REST API Server and Java Client
 **Server (Windows CMD)**
 ```bash
 # Set environment variables
