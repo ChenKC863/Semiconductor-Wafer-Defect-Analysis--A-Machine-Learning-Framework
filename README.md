@@ -111,10 +111,6 @@ set OLLAMA_MODEL=llama3.2:3b # If the ollama model is qwen2.5-coder:7b, please r
 # Start the server
 uvicorn inference_api:app --host 0.0.0.0 --port 8000 --reload
 ```
-Test with curl :
-```bash
-curl -X POST -F "file=@test.jpg" http://localhost:8000/predict
-```
 (For Linux/macOS, replace "set" with "export". For M variant, change S to M in the paths.)
 
 **Java client**
@@ -123,6 +119,10 @@ Compile and run the provided Java client(requires JDK 11+):
 ```bash
 javac java_client/WaferDefectClient.java
 java WaferDefectClient test.jpg http://localhost:8000/predict
+```
+Test with curl :
+```bash
+curl -X POST -F "file=@test.jpg" http://localhost:8000/predict
 ```
 ### 5. Quick Start (with Docker)
 
