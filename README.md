@@ -109,6 +109,7 @@ Test with **curl** :
 ```bash
 curl -X POST -F "file=@test.jpg" http://localhost:8000/predict
 ```
+(if for the M variant, replace S with M)
 ### 5. Quick Start (with Docker)
 
 The pre‑built images are available on [Docker Hub](https://hub.docker.com/r/steven710382/wafer-model/tags).
