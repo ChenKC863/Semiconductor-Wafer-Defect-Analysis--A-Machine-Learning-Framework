@@ -99,7 +99,7 @@ To use a specific variant, set the environment variable `MODEL_VARIANT=S` or `MO
 • During inference, `infer.py` calls functions such as `preprocess_image_pil`. If `preprocess.py` is missing, inference will fail.
 
 ### 4. Start the REST API server and Java Client
-**Test with Server**
+**Server** :
 ```bash
 # Set environment variables
 set ONNX_MODEL_PATH=model/S/best_model.onnx
@@ -114,7 +114,7 @@ curl -X POST -F "file=@test.jpg" http://localhost:8000/predict
 ```
 (if for the M variant, replace S with M)
 
-**Test with Java client**
+**Java client**
 
 Compile and run the provided Java client
 ```bash
