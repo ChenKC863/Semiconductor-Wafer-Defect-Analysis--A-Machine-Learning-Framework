@@ -144,13 +144,21 @@ docker run --rm -v /path/to/your/image.jpg:/data/test.jpg wafer-model:S /data/te
 The output will show the predicted class and confidence.
 
 
-### 6. Launch natural language query interface
-First install and start Ollama, then pull a model:
+## 6. Launch natural language query interface
+
+First, ensure Ollama is installed and running (it usually starts as a background service). If not, start it manually:
 
 ```bash
 ollama serve
-ollama pull llama3.2:3b qwen2.5-coder:7b
 ```
+
+Then pull the required model(s). For example,
+```bash
+ollama pull llama3.2:3b
+# or
+ollama pull qwen2.5-coder:7b
+```
+
 Then run Streamlit:
 ```bash
 streamlit run wafer_llm_query/app.py
