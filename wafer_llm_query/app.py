@@ -53,7 +53,16 @@ SYSTEM_PROMPT = {
 SELECT image_path, anomaly_score FROM wafers WHERE LOWER(true_label) = LOWER('Donut') ORDER BY anomaly_score DESC LIMIT 5;
 """,
     "English": """
-You are a SQL expert. Schema: table wafers with columns: image_path, split, true_label, pred_label, pred_prob, anomaly_score, is_anomaly.
+You are an SQL expert. The database schema is as follows:
+Table: wafers
+Columns:
+- image_path (TEXT): Image path
+- split (TEXT): Dataset split (train/valid/test)
+- true_label (TEXT): True defect category (first letter capitalized, e.g., 'Donut', 'Center', 'Edge-Loc')
+- pred_label (TEXT): Model prediction category
+- pred_prob (REAL): Prediction probability (0~1)
+- anomaly_score (REAL): Anomaly score; higher values indicate less anomaly, lower values indicate more anomaly
+- is_anomaly (INTEGER): Whether it is anomaly (1=anomaly, 0=normal)
 
 Strict rules:
 1. Case‑insensitive: use `LOWER(true_label) = LOWER(value)`.
