@@ -99,7 +99,7 @@ To use a specific variant, set the environment variable `MODEL_VARIANT=S` or `MO
 • During inference, `infer.py` calls functions such as `preprocess_image_pil`. If `preprocess.py` is missing, inference will fail.
 
 ### 4. Start the REST API server and Java Client
-**Server** :
+**Server**
 ```bash
 # Set environment variables
 set ONNX_MODEL_PATH=model/S/best_model.onnx
@@ -108,7 +108,7 @@ set VARIANT_PATH=model/S/variant.txt
 # Start the server
 uvicorn inference_api:app --host 0.0.0.0 --port 8000 --reload
 ```
-Test with **curl** :
+Test with curl :
 ```bash
 curl -X POST -F "file=@test.jpg" http://localhost:8000/predict
 ```
