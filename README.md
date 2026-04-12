@@ -120,7 +120,7 @@ Compile and run the provided Java client(requires JDK 11+):
 javac java_client/WaferDefectClient.java
 java WaferDefectClient test.jpg http://localhost:8000/predict
 ```
-Test with curl :
+or test with curl :
 ```bash
 curl -X POST -F "file=@test.jpg" http://localhost:8000/predict
 ```
