@@ -81,7 +81,7 @@ venv\Scripts\activate          # Windows
 pip install -r requirements.txt
 ```
 
-### 3. Run local inference using the ONNX model (without Docker)
+### 3. Run local inference by using the ONNX model (without Docker)
 ```bash
 python infer.py /path/to/wafer_image.jpg # please change the directory of image 
 ```
