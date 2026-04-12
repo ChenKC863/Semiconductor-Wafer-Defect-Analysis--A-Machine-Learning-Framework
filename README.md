@@ -124,6 +124,11 @@ or test with curl :
 ```bash
 curl -X POST -F "file=@test.jpg" http://localhost:8000/predict
 ```
+The output of example is such as
+```bash
+Status code: 200
+Response: {"predicted_class":"Center","confidence":0.XXXXXXXXXXX,"probabilities":{...}}
+```
 ### 5. Quick Start (with Docker)
 
 The pre‑built images are available on [Docker Hub](https://hub.docker.com/r/steven710382/wafer-model/tags).
